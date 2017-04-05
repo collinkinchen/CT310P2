@@ -1,11 +1,3 @@
-<?php
-// Start the session
-session_name("Ingredient");
-session_start();
-if (!isset($_SESSION['logedIn']) )
-$_SESSION['logedIn'] = false;
-?>
-
 <!DOCTYPE html>
 <html lang="en-US">
 	<head>

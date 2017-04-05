@@ -1,17 +1,24 @@
 <?php  
-    if(!isset($ingredient)){
+include 'Support.php';
+include 'control.php';
+
+        if(!isset($_SESSION ['ingredient'])){
 		$ingredient = "vanilla";
+	}else{
+            $ingredient = $_SESSION ['ingredient'];
 	}
 	
-	function getIsActive($ingredient, $nav_name){
-		if($ingredient == $nav_name){
-			return ' class="active"';
-		} 
-		return "";
-	}
-    
-   $headertext = "Ingredients for You (IFY) - $ingredient";
+	    $ingres = getIngres(); 
+	
+	//function getIsActive($ingredient, $nav_name){
+	//	if($ingredient == $nav_name){
+	//		return ' class="active"';
+	//	} 
+	//	return "";
+	//}
+    $headertext = "Ingredients for You (IFY) - $ingredient";
    include 'head.php';
+
 ?>
                 <div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
@@ -53,17 +60,17 @@
                 
                 <div class="col-xs-12 col-sm-3 col-md-4 col-lg-4">
 					<div class="thumbnail">
-							<img src="./assets/img/<?php echo "$ingredient"; ?>.jpg" class="img-thumbnail" alt="<?php echo "$ingredient"; ?>" style="width:100%, height:100%, margin: 0 auto;">
+							<img src="<?php $picName = getPicName($ingres,$ingredient); echo "$picName"; ?>" class="img-thumbnail" alt="<?php echo "$ingredient"; ?>" style="width:100%, height:100%, margin: 0 auto;">
 						<div class="caption">
 							<p>
 							<?php echo "$ingredient"; ?>
+							
 							<br/>
+							Source: 
 							<?php
-							/* Should be:
-							displayPicSource($ingredient);
-							*/
+							$picSource = displayPicSource($ingres,$ingredient);
+                                                        echo "$picSource";
 							?>
-							Source: Wikimedia, <a href="https://commons.wikimedia.org/wiki/File:Starr_081031-0376_Brassica_oleracea.jpg">Starr 081031-0376 Brassica oleracea</a>
 							</p>
 						</div>
 					</div>
@@ -74,21 +81,17 @@
 				<h2><?php echo "$ingredient"; ?>:</h2>
 				<p>
 				<?php
-                                /* Should be:
-                                displayIngredientDescription($ingredient);
-                                */
+                                $picSource = displayIngredientDescription($ingres,$ingredient);
+                                echo "$picSource";
                                 ?>
-                                    Kale (English IPA /keɪl/) or leaf cabbage refers to certain vegetable cultivars of the plant species Brassica oleracea. A kale plant has green or purple leaves and the central leaves do not form a head (as with headed cabbages). Kales are considered to be closer to wild cabbage than most domesticated forms of Brassica oleracea.
 				</p>
 				<br/><br/>
 				<h3>Citation:</h2>
 				<p>
 				<?php
-                                /* Should be:
-                                displayIngredientDescriptionSource($ingredient);
-                                */
+				$picSource = displayIngredientDescriptionSource($ingres,$ingredient);
+                                echo "$picSource";
                                 ?>
-                                    <a href="https://en.wikipedia.org/wiki/Kale">Kale</a>. Wikipedia. Retrieved March 05, 2017. <br/>
 				</p>
 			</div>
 			</div>
