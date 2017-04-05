@@ -23,14 +23,14 @@ $_SESSION['logedIn'] = false;
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 		
-		<link href="./projectstyle00.css" rel="stylesheet" type="text/css" />
+		<link href="./assets/css/style.css" rel="stylesheet" type="text/css" />
 		
                 <title><?php echo $headertext ?></title>
 	</head>
 
 <body>
     <div class="header">
-        <img src="./CSUlogo.jpg" class="headerImg" alt="LOGO" width="385" height="170" style="width:100%, height:100%"> 
+        <img src="./assets/img/CSUlogo.jpg" class="headerImg" alt="LOGO" width="385" height="170" style="width:100%, height:100%"> 
         <div class = "headerText">
             <h1><?php echo $headertext ?></h1>
         </div>

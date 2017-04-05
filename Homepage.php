@@ -49,7 +49,7 @@
                         <div class="col-md-4 col-lg-5">
                             <div class="thumbnail">
 				<a href="./vanilla.php">
-                                    <img src="./vanilla.jpg" class="img-thumbnail" alt="Vanilla" style="width:100%, height:100%, margin: 0 auto;">
+                                    <img src="./assets/img/vanilla.jpg" class="img-thumbnail" alt="Vanilla" style="width:100%, height:100%, margin: 0 auto;">
 				</a>
                                 <div class="caption">
                                     <p>
@@ -62,7 +62,7 @@
                                 
                             <div class="thumbnail">
 				<a href="./pumpkin.php">
-                                    <img src="./pumpkin.jpg" class="img-thumbnail" alt="Pumpkin" style="width:100%, height:100%, margin: 0 auto;"> 
+                                    <img src="./assets/img/pumpkin.jpg" class="img-thumbnail" alt="Pumpkin" style="width:100%, height:100%, margin: 0 auto;"> 
 				</a>
                                 <div class="caption">
                                     <p>
@@ -77,7 +77,7 @@
                         <div class="col-md-4 col-lg-5">
                             <div class="thumbnail">
                                 <a href="./kale.php">
-                                    <img src="./kale.jpg" class="img-thumbnail" alt="Kale" style="width:100%, height:100%, margin: 0 auto;"> 
+                                    <img src="./assets/img/kale.jpg" class="img-thumbnail" alt="Kale" style="width:100%, height:100%, margin: 0 auto;"> 
                                 </a>
                                 <div class="caption">
                                     <p>
@@ -90,7 +90,7 @@
                             
                             <div class="thumbnail">
 				<a href="./tomato.php">
-                                    <img src="./tomato.jpg" class="img-thumbnail" alt="Tomato" style="width:100%, height:100%, margin: 0 auto;"> 
+                                    <img src="./assets/img/tomato.jpg" class="img-thumbnail" alt="Tomato" style="width:100%, height:100%, margin: 0 auto;"> 
 				</a>
                                 <div class="caption">
                                     <p>
