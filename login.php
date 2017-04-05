@@ -1,6 +1,8 @@
 <?php  
    $headertext = "Ingredients for You (IFY) - Login";
    include 'head.php';
+   include 'Support.php';
+   $users = readUsers();
 ?>
 				
                  <div id="navbar" class="navbar-collapse collapse">
@@ -60,6 +62,7 @@
 			Password:</br>
 			<input type="password" name="pass"></br>
 			</br>
+			<input type="hidden" value="done" name="op"> 
 			<input type="submit" value="Login">
 		</form>
 	</div>
@@ -71,46 +74,20 @@
                     header("Location:Homepage.php"); 
                 }
             
-                if (isset($_POST['user']) && isset($_POST['pass'])) {
-                
-                    $username = $_POST['user'];
-                    $encrypted_password = md5($_POST['pass']);
-                
-                    if ($username == "dlaw" && $encrypted_password == "a863fab21f25ad67f9a9b1bf2349ff52") {
-			
-                        $_SESSION['logedIn'] = true;
-                        
-                        echo '<script type="text/javascript"> window.open("Homepage.php","_self");</script>';
-			
-			
-			//echo "Logged in on" . date(" Y-m-d ") . "at" . date(" h:i:sa");
-                    }
-                    
-                    if ($username == "pizza" && $encrypted_password == "7cf2db5ec261a0fa27a502d3196a6f60") {
-			
-                        $_SESSION['logedIn'] = true;
-                        
-                        echo '<script type="text/javascript"> window.open("Homepage.php","_self");</script>';
-			
-			
-			//echo "Logged in on" . date(" Y-m-d ") . "at" . date(" h:i:sa");
-                    }
-			
-                    else if ($username == "ct310" && $encrypted_password == "3aaec86181ee6974b99d893b4c1eb5b5") {
-                        
-                        $_SESSION['logedIn'] = true;
-                        
-                        echo '<script type="text/javascript"> window.open("Homepage.php","_self");</script>';
-                        
-			//echo "Logged in on" . date(" Y-m-d ") . "at" . date(" h:i:sa");
-                    }
-                    
-                    
-                    else {
-			echo "Invalid login on" . date(" Y-m-d ") . "at" . date(" h:i:sa");
-                    }
-                    
+                if (isset ( $_POST ['op'] )) {
+	$usr = strip_tags($_POST ['user']);
+	$psw = strip_tags($_POST ['pass']);
+	
+		if (password_verify($psw, userHashByName($users, $usr))) {
+			$_SESSION ['startTime'] = time ();
+			$_SESSION ['Username'] = $usr;
+			header ( "Location: ./Homepage.php" );
 		}
+		else {
+			echo "<p style='color:red;'>" . "Username or password is incorrect" . "<br>";
+		}
+	// }
+}
 		
 		else { }
 		}
