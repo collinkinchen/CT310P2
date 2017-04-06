@@ -27,14 +27,13 @@
 		</nav>
 		<div class="container-fluid">
 			<div class="row visible-on">
-			<div class="col-sm-4 col-md-3 col-lg-2">
+			<div class="col-sm-4 col-md-4 col-lg-2">
 			<div class="list-group">
 			<span class="hidden-xs">
 				<a href="./Homepage.php" class="list-group-item list-group-item-myHome">Home</a>
-                <a href="" class="list-group-item list-group-item-Vanilla">Vanilla</a>
-				<a href="./pumpkin.php" class="list-group-item list-group-item-Pumpkin">Pumpkin</a>
-                <a href="./kale.php" class="list-group-item list-group-item-Kale">Kale</a>
-                <a href="./tomato.php" class="list-group-item list-group-item-Tomato">Tomato</a>
+                                <a href="./ingredients.php" class="list-group-item list-group-item-Vanilla">Ingredients</a>
+				<a href="./login.php" class="list-group-item list-group-item-Pumpkin">Login</a>
+                                <a href="./aboutus.php" class="list-group-item list-group-item-Kale">About Us</a>
 			</span>
 			</div>
 			</div>

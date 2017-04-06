@@ -1,7 +1,7 @@
 <?php
 include 'control.php';
 include 'Support.php';
-
+include 'head.php';
 $users = readUsers(); 
 ?>
 
