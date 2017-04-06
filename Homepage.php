@@ -1,9 +1,9 @@
 <?php    
-	include 'control.php';
-	$headertext = "Ingredients for You (IFY)";
-   include 'head.php';
-   
-   include 'Support.php';
+include 'control.php';
+$headertext = "Ingredients for You (IFY)";
+include 'head.php';
+include 'Support.php';
+include 'create.php';
    
     $ingres = getIngres(); 
 
