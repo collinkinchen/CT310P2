@@ -82,6 +82,7 @@
 		if (password_verify($psw, userHashByName($users, $usr))) {
 			$_SESSION ['startTime'] = time ();
 			$_SESSION ['Username'] = $usr;
+			$_SESSION ['group'] = getGroup($users, $usr)
 			header ( "Location: ./Homepage.php" );
 		}
 		else {
