@@ -10,34 +10,12 @@ include 'control.php';
 	
 	    $ingres = getIngres(); 
 	
-	//function getIsActive($ingredient, $nav_name){
-	//	if($ingredient == $nav_name){
-	//		return ' class="active"';
-	//	} 
-	//	return "";
-	//}
+	$pageName = 'ingredient';
     $headertext = "Ingredients for You (IFY) - $ingredient";
    include 'head.php';
 
 ?>
-                <div id="navbar" class="navbar-collapse collapse">
-			<ul class="nav navbar-nav">
-                            <li><a href="./Homepage.php">Home</a></li>
-                            <li class="active"><a href="">Ingredient</a></li>
-                            
-                            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="">Class<span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="http://www.cs.colostate.edu/~ct310">CT310</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="./aboutus.php">About Us</a></li>
-                        </ul>
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="./login.php"><span class="glyphicon glyphicon-user"></span>Login</a></li>
-                        </ul>
-                            
-			
-			</div>
+                
 			</div>
 		</nav>
 		<div class="container-fluid">

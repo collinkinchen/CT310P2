@@ -15,14 +15,14 @@
 function setupIngredientConnection() {
 	try {
 		$dbh = new PDO ( "sqlite:./ingredient.db" );
-		echo '<pre class="bg-success">';
-		echo 'Connection successful.';
-		echo '</pre>';
+		//echo '<pre class="bg-success">';
+		//echo 'Connection successful.';
+		//echo '</pre>';
 		return $dbh;
 	} catch ( PDOException $e ) {
-		echo '<pre class="bg-danger">';
-		echo 'Connection failed (Help!): ' . $e->getMessage ();
-		echo '</pre>';
+		//echo '<pre class="bg-danger">';
+		//echo 'Connection failed (Help!): ' . $e->getMessage ();
+		//echo '</pre>';
 		return FALSE;
 	}
 }

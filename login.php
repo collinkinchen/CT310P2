@@ -1,4 +1,5 @@
 <?php  
+   $pageName = 'login';
    $headertext = "Ingredients for You (IFY) - Login";
    include 'head.php';
    include 'Support.php';

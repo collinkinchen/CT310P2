@@ -1,18 +1,18 @@
 <?php    
 include 'control.php';
+
+$pageName = 'home';
 $headertext = "Ingredients for You (IFY)";
 include 'head.php';
 include 'Support.php';
 include 'create.php';
-   
-    $ingres = getIngres(); 
 
+$ingres = getIngres(); 
 if (isset ( $_POST ['ingre'] )) {
-    $ingredient = strip_tags($_POST ['ingre']);
-    $_SESSION ['ingredient'] = $ingredient;
-    header ( "Location: ./ingredients.php" );
+	$ingredient = strip_tags($_POST ['ingre']);
+	$_SESSION ['ingredient'] = $ingredient;
+	header ( "Location: ./ingredients.php" );
 }
-
 
 
 
@@ -43,14 +43,15 @@ if (isset ( $_POST ['ingre'] )) {
 			<div class="list-group">
 			<span class="hidden-xs">
 				<a href="./Homepage.php" class="list-group-item list-group-item-myHome">Home</a>
-                                <a href="./ingredients.php" class="list-group-item list-group-item-Vanilla">Ingredients</a>
+                <a href="./ingredients.php" class="list-group-item list-group-item-Vanilla">Ingredients</a>
 				<a href="./login.php" class="list-group-item list-group-item-Pumpkin">Login</a>
-                                <a href="./aboutus.php" class="list-group-item list-group-item-Kale">About Us</a>
+                <a href="./aboutus.php" class="list-group-item list-group-item-Kale">About Us</a>
 			</span>
 			</div>
 			</div>
                 
                 <div class="col-xs-12 col-sm-8 col-md-8 col-lg-10">
+				
                 <div class="mainmain">
                 <h2>Welcome!</h2>
                         <p class="text-justify">
