@@ -67,6 +67,20 @@ function userHashByName($users, $username) {
 	return $res;
 }
 
+function getGroup($users, $username){
+	foreach ( $users as $u ) {
+		if ($u->username == $username){
+			if ($u->group == 'Administrator') {
+				$res = 'Administrator';
+			}
+			if ($u->group == 'Customer') {
+				$res = 'Customer';
+			}
+		}
+	}
+	return $res;
+}
+
 function changePassword($username, $new_password){
 	// code referenced: http://stackoverflow.com/questions/27767406/how-do-i-replace-1-value-within-a-row-in-a-csv-file-using-php
 	$input = fopen('user.csv', 'r');  //open for reading
