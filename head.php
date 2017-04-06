@@ -5,7 +5,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		
-                <meta name="Author" content="Lingyang Zhu, Derek Law">
+                <meta name="Author" content="Lingyang Zhu, Collin Kinchen">
                 <meta name="Description" content="CT310 Project1">
                 <meta name="Keywords" content="Bootstrap, HTML, CSS, JavaScript">
 		
@@ -39,6 +39,25 @@
 						<span class="icon-bar"></span>     
                                 </button>
 					
-                                <a class="navbar-brand" href="https://www.cs.colostate.edu/~ct310/yr2017sp/">CT 310</a>
+                             <!--   <a class="navbar-brand" href="https://www.cs.colostate.edu/~ct310/yr2017sp/">CT 310</a>   -->
+							 
+							 <div id="navbar" class="navbar-collapse collapse">
+			<ul class="nav navbar-nav">
+                            <li class="active"><a href="./Homepage.php">Home</a></li>
+                            <li><a href="./ingredients.php">Ingredient</a></li>
+                            
+                            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="">Class<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="http://www.cs.colostate.edu/~ct310">CT310</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="./aboutus.php">About Us</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li><a href="./login.php"><span class="glyphicon glyphicon-user"></span>Login</a></li>
+                        </ul>
+                            
+			
+			</div>
 				</div>
 				

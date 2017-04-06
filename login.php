@@ -5,7 +5,7 @@
    $users = readUsers();
 ?>
 				
-                 <div id="navbar" class="navbar-collapse collapse">
+   <!--              <div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
                             <li><a href="./Homepage.php">Home</a></li>
                             <li><a href="./vanilla.php">Vanilla</a></li>
@@ -27,7 +27,7 @@
                         </ul>
                             
 			
-			</div>
+			</div> -->
 			</div>
 		</nav>
 		
@@ -65,6 +65,7 @@
 			<input type="hidden" value="done" name="op"> 
 			<input type="submit" value="Login">
 		</form>
+		Forgot Password? <a href="./FMP.php">Click Here</a>
 	</div>
 
         <div class="login">

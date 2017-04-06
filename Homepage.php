@@ -16,7 +16,7 @@ if (isset ( $_POST ['ingre'] )) {
 
 
 ?>
-                 <div id="navbar" class="navbar-collapse collapse">
+       <!--          <div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
                             <li class="active"><a href="./Homepage.php">Home</a></li>
                             <li><a href="">Ingredient</a></li>
@@ -33,7 +33,7 @@ if (isset ( $_POST ['ingre'] )) {
                         </ul>
                             
 			
-			</div>
+			</div> -->
 			</div>
 		</nav>
 		<div class="container-fluid">

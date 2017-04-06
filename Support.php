@@ -4,7 +4,7 @@ require_once "./assets/passwordLib.php";
 
 
 class User {
-	public $id = ''; /* promary key ID */
+	public $group = ''; /* promary key ID */
 	public $username = ''; /* Username */
 	public $password = ''; /* hashed password */
 	public $email = ''; /* email */
@@ -33,9 +33,9 @@ function readUsers() {
 function setupDefaultUsers() {
 	$users = array ();
 	$i = 0;
-	$users [$i ++] = makeNewUser ( '1', 'cokin', password_hash('cokin'), 'collinkinchen@gmail.com' );
-	$users [$i ++] = makeNewUser ( '1', 'lyzhu', password_hash('lyzhu'), 'lyzhu@rams.colostate.edu' );
-	$users [$i ++] = makeNewUser ( '2', 'ct310', password_hash('ct310'), 'nspatil@colostate.edu' );
+	$users [$i ++] = makeNewUser ( 'Administrator', 'cokin', password_hash('cokin'), 'collinkinchen@gmail.com' );
+	$users [$i ++] = makeNewUser ( 'Administrator', 'lyzhu', password_hash('lyzhu'), 'lyzhu@rams.colostate.edu' );
+	$users [$i ++] = makeNewUser ( 'Administrator', 'ct310', password_hash('ct310'), 'nspatil@colostate.edu' );
 	writeUsers ( $users );
 }
 
@@ -48,9 +48,9 @@ function writeUsers($users) {
 	fclose ( $fh );
 }
 
-function makeNewUser($id, $username, $h, $email) {
+function makeNewUser($group, $username, $h, $email) {
 	$u = new User ();
-	$u->id = $id;
+	$u->group = $group;
 	$u->username = $username;
 	$u->password = $h;
 	$u->email = $email;
@@ -73,24 +73,10 @@ function changePassword($username, $new_password){
 	$output = fopen('temporary.csv', 'w'); //open for writing
 	
 	while( false !== ( $data = fgetcsv($input) ) ){  //read each line as an array
-	// print_r ($data);
-	
-	
+
 		if ($data[1] == $username) {
-			// echo $data[1] . "<br>";
-			// echo $data[2] . "<br>";
 			$data[2] = password_hash($new_password);
-			// echo $data[2] . "<br>";
-		 
 		}
-	
-	
-   //modify data here
-   // if ($data[4] == $_POST['oldPassword'] && $data[1] == $_SESSION['username']) {
-      //Replace line here
-      // $data[4] = $_POST['newPassword'];
-      // echo("SUCCESS|Password changed!");
-   // }
 
    //write modified data to new file
     fputcsv( $output, $data);
