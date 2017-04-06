@@ -15,7 +15,7 @@ include 'control.php';
    include 'head.php';
 
 ?>
-                
+
 			</div>
 		</nav>
 		<div class="container-fluid">
@@ -73,8 +73,14 @@ include 'control.php';
 				</p>
 			</div>
 			</div>
+			<?php if(isset ($_SESSION['group'])){
+					if($_SESSION['group'] == 'Administrator'){?>
+				 <a href="./newIngredient.php">Click here to add new ingredient</a>
+			
 		
 <?php  
+					}
+			}
     include 'comment.php';
     include 'foot.php';
 ?>

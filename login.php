@@ -85,7 +85,8 @@
 			$_SESSION ['startTime'] = time ();
 			$_SESSION ['Username'] = $usr;
 			$_SESSION ['group'] = getGroup($users, $usr);
-			header ( "Location: ./Homepage.php" );
+			$_SESSION['logedIn'] = true;
+			//header ( "Location: ./Homepage.php" );
 		}
 		else {
 			echo "<p style='color:red;'>" . "Username or password is incorrect" . "<br>";
