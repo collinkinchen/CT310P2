@@ -11,12 +11,14 @@
             ?>
             <form method="post" action="#">
             <p>Title: </p>
-            <input type="text" size="50" name="title" />
+            <input type="text" size="50" name="commentTitle" />
             <p>Write your comment here: </p>
-            <textarea name="comment" rows="5" cols="60"></textarea>
+            <textarea name="commentDescription" rows="5" cols="60"></textarea>
             <br/><br/>
             <input type="submit" name = "submit"/>
             </form>   
+			
+			<!-- NEED TO ADD ON HERE A WAY TO CONNECT THE INGREDIENT TO GET THE ID FOR THE DB -->
 <?php
             }
     }else{
