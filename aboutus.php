@@ -2,13 +2,13 @@
    $headertext = "Ingredients for You (IFY) - About Us";
    include 'head.php';
 ?>
-                <div id="navbar" class="navbar-collapse collapse">
+     <!--          <div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
                             <li><a href="./Homepage.php">Home</a></li>
                             <li><a href="./vanilla.php">Vanilla</a></li>
                             <li><a href="./pumpkin.php">Pumpkin</a></li>
                             <li><a href="./kale.php">Kale</a></li>
-                            <li><a href="./tomato.php">Tomato</a></li>
+                            <li><a href="./tomato.php">Tomato</a></li>   
                             
                             <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="">Class<span class="caret"></span></a>
                                 <ul class="dropdown-menu">
@@ -22,7 +22,7 @@
                         </ul>
                             
 			
-			</div>
+			</div> -->
 			</div>
 		</nav>
 		<div class="container-fluid">
@@ -40,9 +40,9 @@
 			</div>
                 
             <div class="col-xs-12 col-sm-3 col-md-4 col-lg-4">
-                    <h2>Derek Law</h2>
+                    <h2>Collin Kinchen</h2>
                             <p>
-                                From: Colorado Springs, CO
+                                From: Thornton, CO
                                 </br>
                                 </br>
                                 Major: Applied Computing Technology, Business Minor
