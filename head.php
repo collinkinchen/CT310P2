@@ -55,9 +55,12 @@
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="./login.php"><span class="glyphicon glyphicon-user"></span>Login</a></li>
+							<li><a href="./logout.php"><span class="glyphicon glyphicon-user"></span>Logout</a></li>
                         </ul>
                             
 			
-			</div>
+			</div> 
+
+			
 				</div>
 				

@@ -20,7 +20,7 @@ include 'control.php';
    include 'head.php';
 
 ?>
-                <div id="navbar" class="navbar-collapse collapse">
+      <!--          <div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
                             <li><a href="./Homepage.php">Home</a></li>
                             <li class="active"><a href="">Ingredient</a></li>
@@ -37,7 +37,7 @@ include 'control.php';
                         </ul>
                             
 			
-			</div>
+			</div>  -->
 			</div>
 		</nav>
 		<div class="container-fluid">
@@ -95,8 +95,14 @@ include 'control.php';
 				</p>
 			</div>
 			</div>
+			<?php if(isset ($_SESSION['group'])){
+					if($_SESSION['group'] == 'Administrator'){?>
+				 <a href="./newIngredient.php">Click here to add new ingredient</a>
+			
 		
 <?php  
+					}
+			}
     include 'comment.php';
     include 'foot.php';
 ?>
