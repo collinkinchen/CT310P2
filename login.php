@@ -40,7 +40,7 @@
                         session_unset(); 
                         session_destroy(); 
                         $_SESSION['logedIn']=false;
-                        header('Location: ./Homepage.php');  
+                        //header('Location: ./Homepage.php');  
                     }else{
 		?>
 		
