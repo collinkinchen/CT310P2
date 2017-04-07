@@ -64,7 +64,7 @@
                             <li <?php getIsActive($pageName, 'aboutus')?>><a href="./aboutus.php">About Us</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
-            <li <?php getIsActive($pageName, 'login')?>><a href="./login.php"><span class="glyphicon glyphicon-user"></span>Login</a></li>
+            <li <?php getIsActive($pageName, 'login')?>><a href="./login.php"><span class="glyphicon glyphicon-user"></span>Login</a></li></ul>
                          
                               		                              
   					  			

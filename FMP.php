@@ -1,20 +1,33 @@
 <?php
 include 'control.php';
-include 'Support.php';
+
+$pageName = 'passwordReset';
+$headertext = "Ingredients for You (IFY) - Password Reset";
 include 'head.php';
+include 'Support.php';
+include 'create.php';
+
+$ingres = getIngres(); 
 $users = readUsers(); 
 ?>
 
-<html>
-<div class="header">
-<link href="./style.css" rel="stylesheet" type="text/css" />
-<?php echo "   <h2> Please select username for forgotten password </h2>\n"; ?>
-</div>
-
-<body>
-
-
-<div class="form">
+			</div>
+		</nav>
+		<div class="container-fluid">
+			<div class="row visible-on">
+			<div class="col-sm-4 col-md-4 col-lg-2">
+			<div class="list-group">
+			<span class="hidden-xs">
+				<a href="./Homepage.php" class="list-group-item list-group-item-myHome">Home</a>
+                <a href="./ingredients.php" class="list-group-item list-group-item-Vanilla">Ingredients</a>
+				<a href="./login.php" class="list-group-item list-group-item-Pumpkin">Login</a>
+                <a href="./aboutus.php" class="list-group-item list-group-item-Kale">About Us</a>
+			</span>
+			</div>
+			</div> 
+                
+                <div class="col-xs-12 col-sm-8 col-md-8 col-lg-10">
+<div class="mainmain">
 <form method="post" action="./FMP.php">
       <select name="username">
 		<?php 
