@@ -40,7 +40,6 @@
     </div>
     <nav class="navbar navbar-custom">
 			<div class="container-fluid">
-				<div class="navbar-header">
 				
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
 						<span class="sr-only">Toggle navigation</span>
@@ -64,10 +63,24 @@
                             <li <?php getIsActive($pageName, 'aboutus')?>><a href="./aboutus.php">About Us</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
-            <li <?php getIsActive($pageName, 'login')?>><a href="./login.php"><span class="glyphicon glyphicon-user"></span>Login</a></li></ul>
+            <li <?php getIsActive($pageName, 'login')?>><a href="./login.php"><span class="glyphicon glyphicon-user"></span> Login</a></li>
+			<li <?php getIsActive($pageName, 'basket')?>><a href="./basket.php"><span class="glyphicon glyphicon-shopping-cart"></span> Basket</a></li></ul>
                          
                               		                              
   					  			
   			</div>		  	
           </div>
-				
+		</nav>
+		<div class="container-fluid">
+			<div class="row visible-on">
+			<div class="col-sm-4 col-md-3 col-lg-2">
+			<div class="list-group">
+			<span class="hidden-xs">
+				<a href="./Homepage.php" class="list-group-item list-group-item-myHome">Home</a>
+                <a href="./ingredients.php" class="list-group-item list-group-item-Vanilla">Ingredients</a>
+				<a href="./login.php" class="list-group-item list-group-item-Pumpkin">Login</a>
+                <a href="./aboutus.php" class="list-group-item list-group-item-Kale">About Us</a>
+                <a href="./basket.php" class="list-group-item list-group-item-Tomato">Basket</a>
+			</span>
+			</div>
+			</div>
