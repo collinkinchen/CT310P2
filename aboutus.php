@@ -3,41 +3,7 @@
    $headertext = "Ingredients for You (IFY) - About Us";
    include 'head.php';
 ?>
-     <!--          <div id="navbar" class="navbar-collapse collapse">
-			<ul class="nav navbar-nav">
-                            <li><a href="./Homepage.php">Home</a></li>
-                            <li><a href="./vanilla.php">Vanilla</a></li>
-                            <li><a href="./pumpkin.php">Pumpkin</a></li>
-                            <li><a href="./kale.php">Kale</a></li>
-                            <li><a href="./tomato.php">Tomato</a></li>   
-                            
-                            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="">Class<span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="http://www.cs.colostate.edu/~ct310">CT310</a></li>
-                                </ul>
-                            </li>
-                            <li class="active"><a href="./aboutus.php">About Us</a></li>
-                        </ul>
-                        <ul class="nav navbar-nav navbar-right">
-                            <li><a href="./login.php"><span class="glyphicon glyphicon-user"></span>Login</a></li>
-                        </ul>
-                            
-			
-			</div> -->
-			</div>
-		</nav>
-		<div class="container-fluid">
-			<div class="row visible-on">
-			<div class="col-sm-4 col-md-4 col-lg-2">
-			<div class="list-group">
-			<span class="hidden-xs">
-				<a href="./Homepage.php" class="list-group-item list-group-item-myHome">Home</a>
-                                <a href="./ingredients.php" class="list-group-item list-group-item-Vanilla">Ingredients</a>
-				<a href="./login.php" class="list-group-item list-group-item-Pumpkin">Login</a>
-                                <a href="./aboutus.php" class="list-group-item list-group-item-Kale">About Us</a>
-			</span>
-			</div>
-			</div>
+
                 
             <div class="col-xs-12 col-sm-3 col-md-4 col-lg-4">
                     <h2>Collin Kinchen</h2>

@@ -11,20 +11,7 @@ $ingres = getIngres();
 $users = readUsers(); 
 ?>
 
-			</div>
-		</nav>
-		<div class="container-fluid">
-			<div class="row visible-on">
-			<div class="col-sm-4 col-md-4 col-lg-2">
-			<div class="list-group">
-			<span class="hidden-xs">
-				<a href="./Homepage.php" class="list-group-item list-group-item-myHome">Home</a>
-                <a href="./ingredients.php" class="list-group-item list-group-item-Vanilla">Ingredients</a>
-				<a href="./login.php" class="list-group-item list-group-item-Pumpkin">Login</a>
-                <a href="./aboutus.php" class="list-group-item list-group-item-Kale">About Us</a>
-			</span>
-			</div>
-			</div> 
+
                 
                 <div class="col-xs-12 col-sm-8 col-md-8 col-lg-10">
 <div class="mainmain">
@@ -59,7 +46,7 @@ if (isset ( $_POST ['signUpOp'] )) {
 	$str = 'aBcdEFgHiJkLMNoPqRSTuvwxYZ123456789';
 	$key = str_shuffle($str);
 	$_SESSION['key'] = $key;
-	$URL = "https://www.cs.colostate.edu/~cokin/assignment06/passwordreset.php?key=" . $key;
+	$URL = "http://www.cs.colostate.edu/~lyzhu/proj/test/CT310P2/passwordreset.php?key=" . $key;
 	$content = "Please click the following link to reset your password " . $URL ; 
 	
 	error_reporting(0);
@@ -70,7 +57,7 @@ if (isset ( $_POST ['signUpOp'] )) {
 		
 	}
 	else {
-	   echo "<p>$name, there was an error trying to send your comment.</p>\n";
+	   echo "<p>$username, there was an error trying to send your comment.</p>\n";
 	}
 }
 ?>

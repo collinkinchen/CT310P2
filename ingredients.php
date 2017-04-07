@@ -2,39 +2,25 @@
 include 'Support.php';
 include 'control.php';
 
-        if(!isset($_SESSION ['ingredient'])){
+    if(!isset($_SESSION ['ingredient'])){
 		$ingredient = "vanilla";
 	}else{
             $ingredient = $_SESSION ['ingredient'];
 	}
 	
-	    $ingres = getIngres(); 
+	if (isset($_POST ['submit'])){
+		$_SESSION [itemName] = $ingredient;
+		header('Location: ./basket.php');
+	}
+	
+	
+	$ingres = getIngres(); 
 	
 	$pageName = 'ingredient';
     $headertext = "Ingredients for You (IFY) - $ingredient";
    include 'head.php';
 
 ?>
-
-			</div>
-		</nav>
-		<div class="container-fluid">
-			<div class="row visible-on">
-			<div class="col-sm-4 col-md-3 col-lg-2">
-			<div class="list-group">
-			<span class="hidden-xs">
-				<a href="./Homepage.php" class="list-group-item list-group-item-myHome">Home</a>
-                                <a href="./ingredients.php" class="list-group-item list-group-item-Vanilla">Ingredients</a>
-				<a href="./login.php" class="list-group-item list-group-item-Pumpkin">Login</a>
-                                <a href="./aboutus.php" class="list-group-item list-group-item-Kale">About Us</a>
-                                <?php
-                                /*
-                                <a href="./ingredients.php" class="list-group-item list-group-item-Tomato">Tomato</a>
-                                */
-                                ?>
-			</span>
-			</div>
-			</div>
                 
                 <div class="col-xs-12 col-sm-3 col-md-4 col-lg-4">
 					<div class="thumbnail">
@@ -64,13 +50,18 @@ include 'control.php';
                                 ?>
 				</p>
 				<br/><br/>
-				<h3>Citation:</h2>
+				<h2>Citation:</h2>
 				<p>
 				<?php
 				$picSource = displayIngredientDescriptionSource($ingres,$ingredient);
                                 echo "$picSource";
                                 ?>
 				</p>
+				<br/><br/>
+				
+				<h2>
+				<form method = "post"><input type="submit" name="submit" value="Add to my Basket"> </form>
+				</h2>
 			</div>
 			</div>
 			<?php if(isset ($_SESSION['group'])){

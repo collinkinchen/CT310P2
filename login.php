@@ -1,63 +1,35 @@
 <?php  
-   $pageName = 'login';
-   $headertext = "Ingredients for You (IFY) - Login";
-   include 'head.php';
    include 'Support.php';
    include 'control.php';
    $users = readUsers();
+   $pageName = 'login';
+   $headertext = "Ingredients for You (IFY) - Login";
+   include 'head.php';
+		
+	if ($_SESSION['logedIn']==true){
+        if (isset($_POST['submit'])){
+            session_unset(); 
+            session_destroy(); 
+            $_SESSION['logedIn']=false;
+            //header('Location: ./Homepage.php');  
+        }else{
 ?>
-				
-   <!--              <div id="navbar" class="navbar-collapse collapse">
-			<ul class="nav navbar-nav">
-                            <li><a href="./Homepage.php">Home</a></li>
-                            <li><a href="./vanilla.php">Vanilla</a></li>
-                            <li><a href="./pumpkin.php">Pumpkin</a></li>
-                            <li><a href="./kale.php">Kale</a></li>
-                            <li><a href="./tomato.php">Tomato</a></li>
-                            
-                            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="">Class<span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="http://www.cs.colostate.edu/~ct310">CT310</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="./aboutus.php">About Us</a></li>
-                        </ul>
-                        
-                        
-                        <ul class="nav navbar-nav navbar-right">
-                            <li class="active"><a href="./login.php"><span class="glyphicon glyphicon-user"></span>Login</a></li>
-                        </ul>
-                            
-			
-			</div> -->
-			</div>
-		</nav>
 		
-		<?php
-		
-		if ($_SESSION['logedIn']==true){
-                    if (isset($_POST['submit'])){
-                        session_unset(); 
-                        session_destroy(); 
-                        $_SESSION['logedIn']=false;
-                        //header('Location: ./Homepage.php');  
-                    }else{
-		?>
-		
-                <div class="container">
+	<div class="col-xs-12 col-sm-8 col-md-8 col-lg-10">
+		<div class="mainmain">
 		<form method="post" action = "#">
-                    <h3>Logout</h3>
-                    <input type="submit" name = "submit" value = "Logout"/>
-                </form>   
-                </div>
+            <h3>Logout</h3>
+            <input type="submit" name = "submit" value = "Logout"/>
+        </form>  
+		</div>
+	</div>
                 
-                <?php
-                }
-                }else{
-                
-                ?>
-		
-                <div class="container">
+<?php
+}
+}else{
+?>
+	<div class="col-xs-12 col-sm-8 col-md-8 col-lg-10">
+		<div class="mainmain">
 		<form method="POST" action="#">
 			Username:</br>
 			<input type="text" name="user"></br>
@@ -96,8 +68,7 @@
 		
 		else { }
 		}
-
-            ?>
+?>
         </div>
 
 <?php  
