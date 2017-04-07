@@ -6,3 +6,23 @@ Will need functions that displays picture source, description and description co
 I put all the images in assets/img and the style sheet to assets/css, and updated the corresponding phps. <br/>
 Homepage.php and ingredients.php got updated. The ingredients page now works ok. <br/>
 Here's the url: http://www.cs.colostate.edu/~lyzhu/proj/test/CT310P2/Homepage.php <br/>
+
+How to use GitHub
+
+-- cd into the test folder
+
+-- git pull origin master
+
+when you have made changes:
+
+-- git status //changes will show in red
+
+-- git add -u //will add all files you have changed
+
+-- git add [filename] //if you added a new file type the file name and that will be added
+
+-- git status //make sure everything you want to add is in green
+
+-- git commit -m "[your message here]" 
+
+-- git push origin master //will put everything you just changed online 
