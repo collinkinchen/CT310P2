@@ -54,12 +54,7 @@
 							<ul class="nav navbar-nav">
                             <li <?php getIsActive($pageName, 'home')?>><a href="./Homepage.php">Home</a></li>
                             <li <?php getIsActive($pageName, 'ingredient')?>><a href="./ingredients.php">Ingredient</a></li>
-                            
-                            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="">Class<span class="caret"></span></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="http://www.cs.colostate.edu/~ct310">CT310</a></li>
-                                </ul>
-                            </li>
+                            <li><a href="http://www.cs.colostate.edu/~ct310">CT310</a></li>
                             <li <?php getIsActive($pageName, 'aboutus')?>><a href="./aboutus.php">About Us</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
