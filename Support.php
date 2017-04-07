@@ -113,7 +113,7 @@ function changePassword($username, $new_password){
 
 
 class Ingredient {
-	public $ingredientName = '';
+	public $ingredientName = '';   
 	public $pictureSource = '';
 	public $text = '';
 	public $textSource = '';
