@@ -11,6 +11,8 @@ How to use GitHub
 
 -- cd into the test folder
 
+-- git branch //make sure you are on your branch
+
 -- git pull origin master
 
 when you have made changes:
@@ -25,4 +27,6 @@ when you have made changes:
 
 -- git commit -m "[your message here]" 
 
--- git push origin master //will put everything you just changed online 
+-- git pull origin master
+
+-- git push origin [your branch name] //will put everything you just changed online 
