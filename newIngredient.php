@@ -103,12 +103,7 @@ if ($uploadOk == 0) {
 	$i = 0;
 	$ingres [$i ++] = makeNewIngredient($_POST['name'],$_POST['picture_source'],$_POST['text'],$_POST['text_source'],"./" . $target_file,$_POST['price']);
 	
-	echo $_POST['name'] . "<br>";
-	echo $_POST['picture_source'] . "<br>";
-	echo $_POST['text'] . "<br>";
-	echo $_POST['text_source'] . "<br>";
-	echo $target_file . "<br>";
-	echo $_POST['price'] . "<br>";
+
 	
 	addToIngredients($ingres);
 	
