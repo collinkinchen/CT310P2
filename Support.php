@@ -69,6 +69,7 @@ function userHashByName($users, $username) {
 }
 
 function getGroup($users, $username){
+        $res = '';
 	foreach ( $users as $u ) {
 		if ($u->username == $username){
 			if ($u->group == 'Administrator') {
@@ -112,6 +113,65 @@ function changePassword($username, $new_password){
 	// }
 }
 
+class Comment{
+    public $ingredientName = '';
+    public $commentTitle = '';
+    public $commentBody = '';
+
+}
+
+function getcomments() {
+	if (! file_exists ( 'comments.csv' )) {
+		setupDefaultcomments ();
+	}
+	$ingres = array ();
+	$fh = fopen ( 'comments.csv', 'r' ) or die ( "Can't open file" );
+	$keys = fgetcsv ( $fh );
+	while ( ($vals = fgetcsv ( $fh )) != FALSE ) {
+		if (count ( $vals ) > 1) {
+			$u = new Ingredient ();
+			for($k = 0; $k < count ( $vals ); $k ++) {
+				$u->$keys [$k] = $vals [$k];
+			}
+			$ingres [] = $u;
+		}
+	}
+	fclose ( $fh );
+	return $ingres;
+}
+
+function makeNewComment($ingredientName, $commentTitle, $commentBody){
+        $u = new Comment ();
+	$u->ingredientName = $ingredientName;
+	$u->commentTitle = $commentTitle;
+	$u->commentBody = $commentBody;
+	return $u;
+}
+
+function setupDefaultcomments() {
+	$comment = array ();
+	$i = 0;
+	$comment [$i ++] = makeNewComment('Vanilla','Test','This is a test comment');
+	writeComments ( $comment );
+	}
+
+function addToComments($ingres){
+        $fh = fopen ( 'comments.csv', 'a' ) or die ( "Can't open file" );
+	//fputcsv ( $fh, array_keys ( get_object_vars ( $ingres [0] ) ) );
+	for($i = 0; $i < count ( $ingres ); $i ++) {
+		fputcsv ( $fh, get_object_vars ( $ingres [$i] ) );
+	}
+	fclose ( $fh );
+}
+
+function writeComments($ingres){
+        $fh = fopen ( 'comments.csv', 'w+' ) or die ( "Can't open file" );
+	fputcsv ( $fh, array_keys ( get_object_vars ( $ingres [0] ) ) );
+	for($i = 0; $i < count ( $ingres ); $i ++) {
+		fputcsv ( $fh, get_object_vars ( $ingres [$i] ) );
+	}
+	fclose ( $fh );
+}
 
 class Ingredient {
 	public $ingredientName = '';   
@@ -160,13 +220,12 @@ function makeNewIngredient($ingreName, $picSource, $descrip, $descripSource, $pi
 	$u->textSource = $descripSource;
 	$u->pictureName = $picName;
 	$u->price = $p;
-	$ingres[0] = $u;
-	addToIngredients($ingres);
+	return $u;
 }
 
 function addToIngredients($ingres){
-        $fh = fopen ( 'ingredients.csv', 'r+' ) or die ( "Can't open file" );
-	fputcsv ( $fh, array_keys ( get_object_vars ( $ingres [0] ) ) );
+        $fh = fopen ( 'ingredients.csv', 'a' ) or die ( "Can't open file" );
+	//fputcsv ( $fh, array_keys ( get_object_vars ( $ingres [0] ) ) );
 	for($i = 0; $i < count ( $ingres ); $i ++) {
 		fputcsv ( $fh, get_object_vars ( $ingres [$i] ) );
 	}
