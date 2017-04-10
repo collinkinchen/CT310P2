@@ -161,13 +161,12 @@ function makeNewIngredient($ingreName, $picSource, $descrip, $descripSource, $pi
 	$u->textSource = $descripSource;
 	$u->pictureName = $picName;
 	$u->price = $p;
-	$ingres[0] = $u;
-	addToIngredients($ingres);
+	return $u;
 }
 
 function addToIngredients($ingres){
-        $fh = fopen ( 'ingredients.csv', 'r+' ) or die ( "Can't open file" );
-	fputcsv ( $fh, array_keys ( get_object_vars ( $ingres [0] ) ) );
+        $fh = fopen ( 'ingredients.csv', 'a' ) or die ( "Can't open file" );
+	//fputcsv ( $fh, array_keys ( get_object_vars ( $ingres [0] ) ) );
 	for($i = 0; $i < count ( $ingres ); $i ++) {
 		fputcsv ( $fh, get_object_vars ( $ingres [$i] ) );
 	}
