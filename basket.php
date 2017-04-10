@@ -2,20 +2,24 @@
 include 'Support.php';
 include 'control.php';
 
+	$pageName = 'basket';
+    $headertext = "Ingredients for You (IFY) - basket";
+   include 'head.php';
+
 $users = readUsers(); 
 $ingres = getIngres();
 
-    if(!isset($_SESSION["Username"])){
+    if(!$_SESSION['logedIn']){
 		header('Location: ./login.php');
 	}
 	
 	 if (isset($_GET['search']))
     {
 		$index = $_GET['search'];
-		if ($index==1){
+		if ($index==1 && count($_SESSION["ItemArray"])==1){
 			unset($_SESSION["ItemArray"]);
 		}else{
-			unset($_SESSION["ItemArray"][$index]);
+			unset($_SESSION["ItemArray"][$index-1]);
 		}
 		header('Location: ./basket.php');
     }
@@ -25,16 +29,18 @@ function showList(){
 	$myArray = array();
 	
 	if (!isset($_SESSION["ItemArray"])){
-		$_SESSION["ItemArray"] = $myArray;
 		
 		if (!isset($_SESSION ["itemName"])){
-			$nothing = 1;
+			$_SESSION ["nothing"] = 1;
 			echo "You have nothing in your basket now!\n";
+			return;
 		}
+		
+		$_SESSION["ItemArray"] = $myArray;
 	}
 	
-	if (!isset($nothing)){
 		if (isset($_SESSION ["itemName"])){
+			unset($_SESSION ["nothing"]);
 			$selectedItem = $_SESSION ["itemName"];
 			$_SESSION["ItemArray"][] = $selectedItem;
 			unset($_SESSION ["itemName"]);
@@ -45,7 +51,6 @@ function showList(){
 		$count = 1;
 		$total = 0;
 		foreach ( $_SESSION["ItemArray"] as $u ) {
-			//$price = displayIngreRow($u);
 			echo "<tr>";
 				echo "<th>Item name: $u</th>";
 				$price = getPrice($ingres, $u);
@@ -58,19 +63,15 @@ function showList(){
 		}
 		echo "</table></p>";
 		echo "<h3>Total: $total</h3>";
-	}
 }	
 	
-	$pageName = 'basket';
-    $headertext = "Ingredients for You (IFY) - basket";
-   include 'head.php';
 
 ?>
 
 			
 			<div class="col-xs-12 col-sm-8 col-md-8 col-lg-10">
 			
-				<h2>Order Detail:</h2>
+				<h3>Order Detail:</h3>
 				<?php showList();?>
 				<br/><br/>
 				
@@ -100,13 +101,16 @@ function showList(){
 					echo "<p>$username, there was an error trying to submit your order.</p>\n";
 				}
 			}else{
+				if (!isset($_SESSION ["nothing"])){
 			?>
 				<h2>
 				<form method = "post"><input type="submit" name="submit" value="Submit Order"> </form>
 				</h2>
-			</div>
+			<?php
+				}
+			}
+			?>
 			</div>
 <?php 
-			}
     include 'foot.php';
 ?>
