@@ -14,6 +14,18 @@ if (isset ( $_GET ['ingre'] )) {
 	header ( "Location: ./ingredients.php?key=$ingredient" );
 }
 
+function showTable(){
+    $ingres = getIngres();
+    foreach ( $ingres as $u ) {
+        echo "<div>";
+        $name = getName($u);
+        echo "Item: <a href=\"./ingredients.php?key=$name\">$name    </a>";
+        echo "<a href=\"./ingredients.php?key=$name\">";
+        $img = getPicName($ingres,$name);
+	echo "<img src=\"$img\" class=\"img-thumbnail\" alt=\"$name\" style=\"width=\"300\" height=\"300\";\"></a></div>"; 
+    }
+}
+
 
 
 ?>
@@ -27,22 +39,10 @@ if (isset ( $_GET ['ingre'] )) {
                                 <br/><br/>
                                 Please select an ingredient you want to view here:
                         </p>
-                        <form method="get">
-                            <select name="ingre">	
-                            <?php 
-                            echo "\n";
-                            foreach ($ingres as $ingre) {
-                            $flag = 'selected';
-                            echo "\t\t\t\t<option value=\"$ingre->ingredientName\" $flag > $ingre->ingredientName </option>\n";
-                            }
-                            ?>
-                            </select> 
-                            <input type="submit" value = "Submit"/>
-                        </form>
-				
-                        <?/*
-
-                        */?>
+                <div class = "row">
+		<?php 
+		showTable();
+		?>
                         </div>
                 </div>
             </div>
