@@ -18,12 +18,16 @@ if (isset ( $_GET ['ingre'] )) {
 function showTable(){
     $ingres = getIngres();
     foreach ( $ingres as $u ) {
-        echo "<div>";
+        echo "<div class = \"col-md-4 col-lg-5\">";
+		echo "<div class = \"thumbnail\">";
         $name = getName($u);
-        echo "Item: <a href=\"./ingredients.php?key=$name\">$name    </a>";
-        echo "<a href=\"./ingredients.php?key=$name\">";
+        //echo "Item: <a href=\"./ingredients.php?key=$name\">$name    </a>";
+        echo "<a href=\"./ingredients.php?key=$name\" target=\"_blank\">";
         $img = getPicName($ingres,$name);
-	echo "<img src=\"$img\" class=\"img-thumbnail\" alt=\"$name\" style=\"width=\"300\" height=\"300\";\"></a></div>"; 
+	echo "<img src=\"$img\" class=\"img-thumbnail\" alt=\"$name\" style=\"width=\"300\" height=\"300\";\"></a>";
+		echo "<div class=\"caption\">";
+		echo "<p>Item: <a href=\"./ingredients.php?key=$name\">$name    </a></p>";
+	echo "</div></a></div></div>"; 
     }
 }
 

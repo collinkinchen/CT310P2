@@ -104,7 +104,7 @@ function getNames(){
 					}
 				}
 				foreach ( $users as $u ) {
-					if ($u->group == "Administrator") {
+					if ($u->username == "ct310") {
 						$Aemail = $u->email;
 					}
 				}
@@ -116,7 +116,7 @@ function getNames(){
 				$adminContent = "User " . $username . " just submitted an order, order ID is: " . $id . "\nItems ordered are: " . $nameTable . "Total is $$total";
                                 
                                 if ($total!=0){
-				if(mail($email, 'Order Confirmation from CT310 Project', $content)&&mail("kathypizza330@gmail.com", 'Order Confirmation from CT310 Project', $adminContent)) {
+				if(mail($email, 'Order Confirmation from CT310 Project', $content)&&mail($Amail, 'Order Confirmation from CT310 Project (admin)', $adminContent)) {
                                         $_SESSION["ordered"] = true;
                                         unset($_SESSION["ItemArray"]);
 					echo "<h2 align=\"center\">Order Submitted! You will receive a confirmation email soon.</h2>\n";
