@@ -6,13 +6,17 @@ $users = readUsers();
 $ingres = getIngres();
 
     if(!isset($_SESSION["Username"])){
-		header('Location: ./Homepage.php');
+		header('Location: ./login.php');
 	}
 	
 	 if (isset($_GET['search']))
     {
 		$index = $_GET['search'];
-        unset($_SESSION["ItemArray"][$index]);
+		if ($index==1){
+			unset($_SESSION["ItemArray"]);
+		}else{
+			unset($_SESSION["ItemArray"][$index]);
+		}
 		header('Location: ./basket.php');
     }
 	

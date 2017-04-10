@@ -11,14 +11,22 @@
             session_unset(); 
             session_destroy(); 
             $_SESSION['logedIn']=false;
-            //header('Location: ./Homepage.php');  
+            header('Location: ./login.php');  
         }else{
 ?>
 		
 	<div class="col-xs-12 col-sm-8 col-md-8 col-lg-10">
 		<div class="mainmain">
 		<form method="post" action = "#">
-            <h3>Logout</h3>
+		<p>
+		<?php
+		$name = $_SESSION ['userName'];
+		$time = $_SESSION ['startTime'];
+		echo "$name login time: $time";
+		?>
+		<br/><br/>
+		You can logout here:
+		</p>
             <input type="submit" name = "submit" value = "Logout"/>
         </form>  
 		</div>
@@ -27,6 +35,30 @@
 <?php
 }
 }else{
+?>
+
+            <?php
+            
+                if (isset ( $_POST ['op'] )) {
+	$usr = strip_tags($_POST ['user']);
+	$psw = strip_tags($_POST ['pass']);
+	
+		if (password_verify($psw, userHashByName($users, $usr))) {
+			$time = date('l jS \of F Y h:i:s A');
+			$_SESSION ['startTime'] = $time;
+			$_SESSION ['userName'] = $usr;
+			$_SESSION ['group'] = getGroup($users, $usr);
+			$_SESSION['logedIn'] = true;
+			echo "$usr login success! Logged in at: $time";
+		}
+		else {
+			echo "<p style='color:red;'>" . "Username or password is incorrect" . "<br>";
+		}
+	// }
+}
+		
+		else { 
+		
 ?>
 	<div class="col-xs-12 col-sm-8 col-md-8 col-lg-10">
 		<div class="mainmain">
@@ -42,35 +74,7 @@
 		Forgot Password? <a href="./FMP.php">Click Here</a>
 	</div>
 
-        <div class="login">
-            <?php
-                
-                if(isset($_SESSION['use'])) {
-                    header("Location:Homepage.php"); 
-                }
-            
-                if (isset ( $_POST ['op'] )) {
-	$usr = strip_tags($_POST ['user']);
-	$psw = strip_tags($_POST ['pass']);
-	
-		if (password_verify($psw, userHashByName($users, $usr))) {
-			$_SESSION ['startTime'] = time ();
-			$_SESSION ['Username'] = $usr;
-			$_SESSION ['group'] = getGroup($users, $usr);
-			$_SESSION['logedIn'] = true;
-			//header ( "Location: ./Homepage.php" );
-		}
-		else {
-			echo "<p style='color:red;'>" . "Username or password is incorrect" . "<br>";
-		}
-	// }
-}
-		
-		else { }
-		}
-?>
-        </div>
-
 <?php  
+}}
    include 'foot.php';
 ?>
