@@ -187,7 +187,8 @@ p{
 
 .footer{
 	text-align: center;
-	position: relative;
+        display: inline-block;
+	position: static;
 	bottom: 0;
 }
 
