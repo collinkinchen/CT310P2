@@ -22,7 +22,7 @@ include 'head.php';
  <?php
 
 if (isset ( $_POST ['op'] )) {
-	makeNewIngredient($_POST['name'],$_POST['picture_source'],$_POST['text'],$_POST['text_source'],$_POST['picture_name'],$_POST['price']);
+	makeNewIngredient($_POST['name'],$_POST['picture_source'],$_POST['text'],'<a href=\"' . $_POST['text_source'] . '\">Text Source</a>',$_POST['picture_name'],$_POST['price']);
 	?>
 	Please click <a href="./login.php">here</a> to return to login page
 	<?php

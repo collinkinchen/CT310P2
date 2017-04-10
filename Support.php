@@ -36,6 +36,7 @@ function setupDefaultUsers() {
 	$users [$i ++] = makeNewUser ( 'Administrator', 'cokin', password_hash('cokin'), 'collinkinchen@gmail.com' );
 	$users [$i ++] = makeNewUser ( 'Administrator', 'lyzhu', password_hash('lyzhu'), 'lyzhu@rams.colostate.edu' );
 	$users [$i ++] = makeNewUser ( 'Administrator', 'ct310', password_hash('ct310'), 'nspatil@colostate.edu' );
+	$users [$i ++] = makeNewUser ( 'Customer', 'ct310', password_hash('ct310'), 'nspatil@colostate.edu' );
 	writeUsers ( $users );
 }
 
