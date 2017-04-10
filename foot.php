@@ -4,7 +4,7 @@
 				<?php
 					$name = $_SESSION ['userName'];
 					$time = $_SESSION ['startTime'];
-					echo "$name login time: $time";
+					echo "$name login time: $time<br/>";
 				?>
                 &copy; <i>Copyright 2017, Lingyang Zhu, Collin Kinchen</i>
                 <br/>
