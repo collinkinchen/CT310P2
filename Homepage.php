@@ -5,7 +5,7 @@ $pageName = 'home';
 $headertext = "Ingredients for You (IFY)";
 include 'head.php';
 include 'Support.php';
-include 'create.php';
+//include 'create.php';
 $users = readUsers();
 $ingres = getIngres(); 
 if (isset ( $_GET ['ingre'] )) {
