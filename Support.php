@@ -36,6 +36,7 @@ function setupDefaultUsers() {
 	$users [$i ++] = makeNewUser ( 'Administrator', 'cokin', password_hash('cokin'), 'collinkinchen@gmail.com' );
 	$users [$i ++] = makeNewUser ( 'Administrator', 'lyzhu', password_hash('lyzhu'), 'lyzhu@rams.colostate.edu' );
 	$users [$i ++] = makeNewUser ( 'Administrator', 'ct310', password_hash('ct310'), 'nspatil@colostate.edu' );
+	$users [$i ++] = makeNewUser ( 'Customer', 'ct310', password_hash('ct310'), 'nspatil@colostate.edu' );
 	writeUsers ( $users );
 }
 
@@ -159,13 +160,16 @@ function makeNewIngredient($ingreName, $picSource, $descrip, $descripSource, $pi
 	$u->textSource = $descripSource;
 	$u->pictureName = $picName;
 	$u->price = $p;
-	addToIngredients($u);
+	$ingres[0] = $u;
+	addToIngredients($ingres);
 }
 
 function addToIngredients($ingres){
         $fh = fopen ( 'ingredients.csv', 'r+' ) or die ( "Can't open file" );
-		fputcsv ( $fh, get_object_vars ( $u ) );
-	
+	fputcsv ( $fh, array_keys ( get_object_vars ( $ingres [0] ) ) );
+	for($i = 0; $i < count ( $ingres ); $i ++) {
+		fputcsv ( $fh, get_object_vars ( $ingres [$i] ) );
+	}
 	fclose ( $fh );
 }
 
