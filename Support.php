@@ -154,6 +154,17 @@ function setupDefaultcomments() {
 	$comment [$i ++] = makeNewComment('Vanilla','Test','This is a test comment');
 	writeComments ( $comment );
 	}
+	
+function loadComment($comments, $ingreName){
+	foreach ( $comments as $u ) {
+		if ($u->ingredientName == $ingreName) {
+                    $title = $u->commentTitle;
+                    echo "$title: <br/>";
+                    $body = $u->commentBody;
+                    echo "$body <br/>";
+		}
+	}
+}
 
 function addToComments($ingres){
         $fh = fopen ( 'comments.csv', 'a' ) or die ( "Can't open file" );
