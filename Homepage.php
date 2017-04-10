@@ -8,6 +8,7 @@ include 'Support.php';
 include 'create.php';
 $users = readUsers();
 $ingres = getIngres(); 
+
 if (isset ( $_GET ['ingre'] )) {
 	$ingredient = strip_tags($_GET ['ingre']);
 	header ( "Location: ./ingredients.php?key=$ingredient" );
