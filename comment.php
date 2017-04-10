@@ -1,12 +1,19 @@
+
+
 <div class="row">
 <h2>Comment here: </h2>
     <?php 
     if ($_SESSION['logedIn']==true){
-        if (isset ($_POST ['submit'])){
-            $commentTitle = filter_var($_POST['title'], FILTER_SANITIZE_STRING);
-            $commentPara = filter_var($_POST['comment'], FILTER_SANITIZE_STRING);
-            echo "<h3>$commentTitle</h3>";
-            echo "<p>$commentPara</p>";
+        if (isset ($_POST ['submitC'])){
+            $commentTitle = filter_var($_POST['commentTitle'], FILTER_SANITIZE_STRING);
+            $commentPara = filter_var($_POST['commentDescription'], FILTER_SANITIZE_STRING);
+            
+            
+            $comment = array ();
+            $i = 0;
+            $comment [$i ++] = makeNewComment($_GET['key'],$commentTitle, $commentPara);
+            addToComments($comment);
+            
             }else{
             ?>
             <form method="post" action="#">
@@ -15,7 +22,7 @@
             <p>Write your comment here: </p>
             <textarea name="commentDescription" rows="5" cols="60"></textarea>
             <br/><br/>
-            <input type="submit" name = "submit"/>
+            <input type="submit" name = "submitC"/>
             </form>   
 			
 			<!-- NEED TO ADD ON HERE A WAY TO CONNECT THE INGREDIENT TO GET THE ID FOR THE DB -->
@@ -29,8 +36,14 @@
         <input type="submit" name = "Login" value="Login"/>
     </form>  
     <br/>
-    </div>
-    </div>
-<?php 
+    
+<?php
     }
+    $comments = getcomments();
+    $ingreName = $_GET['key'];
+    loadComment($comments, $ingreName);
+    
 ?>
+    
+    </div>
+    </div>

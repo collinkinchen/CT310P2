@@ -53,7 +53,7 @@
 							 <div id="navbar" class="navbar-collapse collapse">
 							<ul class="nav navbar-nav">
                             <li <?php getIsActive($pageName, 'home')?>><a href="./Homepage.php">Home</a></li>
-                            <li <?php getIsActive($pageName, 'ingredient')?>><a href="./ingredients.php">Ingredient</a></li>
+                            <li <?php getIsActive($pageName, 'ingredient')?>><a href="./ingredients.php?key=vanilla">Ingredient</a></li>
                             <li><a href="http://www.cs.colostate.edu/~ct310">CT310</a></li>
                             <li <?php getIsActive($pageName, 'aboutus')?>><a href="./aboutus.php">About Us</a></li>
                         </ul>
@@ -72,7 +72,7 @@
 			<div class="list-group">
 			<span class="hidden-xs">
 				<a href="./Homepage.php" class="list-group-item list-group-item-myHome">Home</a>
-                <a href="./ingredients.php" class="list-group-item list-group-item-Vanilla">Ingredients</a>
+                <a href="./ingredients.php?key=vanilla" class="list-group-item list-group-item-Vanilla">Ingredients</a>
 				<a href="./login.php" class="list-group-item list-group-item-Pumpkin">Login</a>
                 <a href="./aboutus.php" class="list-group-item list-group-item-Kale">About Us</a>
                 <a href="./basket.php" class="list-group-item list-group-item-Tomato">Basket</a>
