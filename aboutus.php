@@ -15,7 +15,7 @@
                                 Major: Applied Computing Technology, Business Minor
                                 </br>
                                 </br>
-                                <a href="https://www.cs.colostate.edu/~dlaw">My Homepage</a>
+                                <a href="https://www.cs.colostate.edu/~cokin">My Homepage</a>
                                 </br>
                             </p>
 				

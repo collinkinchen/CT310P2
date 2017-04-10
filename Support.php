@@ -159,7 +159,14 @@ function makeNewIngredient($ingreName, $picSource, $descrip, $descripSource, $pi
 	$u->textSource = $descripSource;
 	$u->pictureName = $picName;
 	$u->price = $p;
-	return $u;
+	addToIngredients($u);
+}
+
+function addToIngredients($ingres){
+        $fh = fopen ( 'ingredients.csv', 'r+' ) or die ( "Can't open file" );
+		fputcsv ( $fh, get_object_vars ( $u ) );
+	
+	fclose ( $fh );
 }
 
 function writeIngredients($ingres){
