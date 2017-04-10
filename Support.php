@@ -35,8 +35,8 @@ function setupDefaultUsers() {
 	$i = 0;
 	$users [$i ++] = makeNewUser ( 'Administrator', 'cokin', password_hash('cokin'), 'collinkinchen@gmail.com' );
 	$users [$i ++] = makeNewUser ( 'Administrator', 'lyzhu', password_hash('lyzhu'), 'lyzhu@rams.colostate.edu' );
-	$users [$i ++] = makeNewUser ( 'Administrator', 'ct310', password_hash('ct310'), 'nspatil@colostate.edu' );
-	$users [$i ++] = makeNewUser ( 'Customer', 'ct310', password_hash('ct310'), 'nspatil@colostate.edu' );
+	$users [$i ++] = makeNewUser ( 'Administrator', 'ct310', password_hash('A835E0'), 'ct310@cs.colostate.edu' );
+	$users [$i ++] = makeNewUser ( 'Customer', 'fred', password_hash('3B23E6'), 'ct310@cs.colostate.edu' );
 	writeUsers ( $users );
 }
 
