@@ -2,19 +2,23 @@
 include 'Support.php';
 include 'control.php';
 
-    if(!isset($_SESSION ['ingredient'])){
+$ingres = getIngres(); 
+
+    if(!$_SERVER['QUERY_STRING']){
 		$ingredient = "vanilla";
 	}else{
-            $ingredient = $_SESSION ['ingredient'];
+        $ingredient = substr($_SERVER['QUERY_STRING'],4);
+		if (!ingredientExist($ingres, $ingredient)){
+			$ingredient = "vanilla";
+		}
 	}
 	
 	if (isset($_POST ['submit'])){
-		$_SESSION [itemName] = $ingredient;
+		$_SESSION ["itemName"] = $ingredient;
 		header('Location: ./basket.php');
 	}
 	
 	
-	$ingres = getIngres(); 
 	
 	$pageName = 'ingredient';
     $headertext = "Ingredients for You (IFY) - $ingredient";
@@ -55,6 +59,15 @@ include 'control.php';
 				<?php
 				$picSource = displayIngredientDescriptionSource($ingres,$ingredient);
                                 echo "$picSource";
+                                ?>
+				</p>
+				<br/><br/>
+				
+				<h2>Price:</h2>
+				<p>
+				<?php
+				$price = getPrice($ingres,$ingredient);
+                                echo "$$price";
                                 ?>
 				</p>
 				<br/><br/>

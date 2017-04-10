@@ -8,10 +8,9 @@ include 'Support.php';
 include 'create.php';
 
 $ingres = getIngres(); 
-if (isset ( $_POST ['ingre'] )) {
-	$ingredient = strip_tags($_POST ['ingre']);
-	$_SESSION ['ingredient'] = $ingredient;
-	header ( "Location: ./ingredients.php" );
+if (isset ( $_GET ['ingre'] )) {
+	$ingredient = strip_tags($_GET ['ingre']);
+	header ( "Location: ./ingredients.php?key=$ingredient" );
 }
 
 
@@ -27,7 +26,7 @@ if (isset ( $_POST ['ingre'] )) {
                                 <br/><br/>
                                 Please select an ingredient you want to view here:
                         </p>
-                        <form action="#" method="post">
+                        <form method="get">
                             <select name="ingre">	
                             <?php 
                             echo "\n";
