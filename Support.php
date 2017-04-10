@@ -69,6 +69,7 @@ function userHashByName($users, $username) {
 }
 
 function getGroup($users, $username){
+        $res = "";
 	foreach ( $users as $u ) {
 		if ($u->username == $username){
 			if ($u->group == 'Administrator') {
