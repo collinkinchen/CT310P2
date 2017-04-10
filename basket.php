@@ -6,7 +6,7 @@ $users = readUsers();
 $ingres = getIngres();
 
     if(!isset($_SESSION["Username"])){
-		header('Location: ./Homepage.php');
+		header('Location: ./login.php');
 	}
 	
 	 if (isset($_GET['search']))

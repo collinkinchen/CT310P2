@@ -1,5 +1,6 @@
 <?php  
    $pageName = 'aboutus';
+   include 'control.php';
    $headertext = "Ingredients for You (IFY) - About Us";
    include 'head.php';
 ?>
